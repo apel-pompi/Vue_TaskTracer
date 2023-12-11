@@ -1,7 +1,7 @@
 <template>
     <header>
         <h1>Task Tracer</h1>
-        <Button text="Add Tast" color="green"></Button>
+        <Button @toggle-add-task="$emit('toggle-add-task')" :text="showAddTask ? 'Close' : 'Add Task'" :color="showAddTask ? 'red' : 'green'" />
     </header>
 </template>
 
@@ -9,6 +9,10 @@
     import Button from "./Button";
     export default{
         name:'Header',
+        props:{
+            title:String,
+            showAddTask:Boolean
+        },
         components:{
             Button
         },
