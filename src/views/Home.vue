@@ -1,9 +1,7 @@
 <template>
     <div class="home">
-        <div v-show="showAddTask">
-            <AddTask @add-task="addTask"/>
-        </div>
         
+        <AddTask v-show="showAddTask" @add-task="addTask"/>
         <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
     </div>
 </template>
